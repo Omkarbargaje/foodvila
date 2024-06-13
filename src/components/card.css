@@ -1,0 +1,168 @@
+.res_card_container {
+  width: 83vw;
+  height: auto;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  /* background-color: aqua; */
+}
+
+.shimmer_container{
+  width: 83vw;
+  height: auto;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+.res_card {
+  display: inline-block;
+  justify-content: center;
+  height: 350px;
+  width: 300px;
+  border-radius: 10px;
+  margin: 10px;
+  /* box-shadow: 0 0 3px 0 #696969; */
+}
+
+.Shimmer_res_card{
+  display: inline-block;
+  justify-content: center;
+  height: 350px;
+  width: 300px;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #f0f0f0;
+}
+
+.res_card:hover{
+  transform: scale(1.01);
+  transition: transform 0.3s ease;
+}
+
+.res_img_container {
+  display: flex;
+  justify-content: center;
+}
+
+.res_img {
+  height: 250px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.first-line {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.Shimmer_first-line{
+  display: inline-flex;
+  align-items: center;
+  margin-left: 5px;
+  background-color: #f0f0f0;
+}
+
+.first-line > h3 {
+  font-weight: bold;
+}
+
+.res_name {
+  width: 240px;
+  margin: 0px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Basis_Grotesque_Pro_Bold;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.75);
+  overflow: hidden;
+  display: -webkit-box;
+  overflow-wrap: break-word;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.res_name > h2 {
+  display: block;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.res_rating {
+  width: 50px;
+  color: #fff;
+  background-color: #267e3e;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 5px;
+  font-size: 16px;
+  display: flex;
+}
+
+.ratingAndDeliveryTime {
+  margin-left: 5px;
+  font-family: Basis_Grotesque_Pro_Bold;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+  color:rgb(105, 105, 105);
+  /* color: rgba(242, 23, 122, 0.75); */
+  overflow: hidden;
+  width: 100%;
+  display: inline-flex;
+}
+
+.Shimmer_ratingAndDeliveryTime{
+  margin-left: 5px;
+  font-family: Basis_Grotesque_Pro_Bold;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+  color:rgb(105, 105, 105);
+  /* color: rgba(242, 23, 122, 0.75); */
+  overflow: hidden;
+  width: 100%;
+  display: inline-flex;
+  background-color: #f0f0f0;
+}
+
+.res_price{
+  width: 220px;
+}
+
+.res_cuisine {
+  margin-left: 5px;
+  color: #696969;
+  white-space: nowrap;
+  font-family: Okra, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  font-family: Basis_Grotesque_Pro;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.6);
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  width: 70%;
+}
