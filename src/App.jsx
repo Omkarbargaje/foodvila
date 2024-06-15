@@ -1,5 +1,6 @@
 import Header from "./components/Header";
-import Body from "./components/Body";
+// import Body from "./components/Body";
+import { Outlet } from "react-router-dom";
 
 function App() {
 
@@ -8,7 +9,8 @@ function App() {
     <div className="app">
     <Header/>
     {/* <h1>search from app.js</h1> */}
-    <Body/>
+    {/* <Body/> */}
+    <Outlet/>
   </div>
   )
 }

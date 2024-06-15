@@ -1,0 +1,505 @@
+-made using industry level best practices
+
+
+Episode 1:
+
+* React Element = - It is at the end of the day just a normal variable.it is just a plan js object.
+                  - its gets converted to a html at the time of rendering.
+
+ex. const heading=React.createElement("h1",{id:"heading"},"Hello Omkar!");
+ex: const Heading = <h1>Hello from React Element...</h1>;
+
+note: - React.createElement replaces all the data present in the root while rendering the data.because react works in root.
+      - if there is a another div before the root div then react does not change that data . react only works in a specified root div.because of this we can use react previously build html also.everthing that render that renders in this root.
+      - that why react is a library it can work independently in a small portion of a code.thats why react can work in a prev build web apps.
+      - react is a library not a framwork.framwork comes with a lot of functionality.
+      - React element is not a HTML element,
+
+
+
+
+
+
+
+
+Episode 2:
+
+notes:
+-npm is th package maneger
+-package.json is configuration for npm
+-most important package in our project is a bundler here it is parcel.but,there are also many other bundler available in the market like webpack,vite,etc.
+-to install parcel we run "npm install -D parcel". there are two types of dependensies we can install one are the normal dependancises and other are dev-dependencies.we need dev-dependencies to be installed when we are devloping.normal dependencies are used for production code.
+-now we can see that in our "package.json" that
+  "devDependencies":{
+    "parcel": "^2.12.0"
+  }
+-node module is a collection of all dependencies.
+-we never put node module on git because it is very heavy.because, package.json and package-lock.json can recreate all the node module.
+-here, " ^ "  this symbol is known as a caret it install a minor version of update if there is any new update is present like 2.12.1. we can aslo use " ~ " this is known as tilda this install major version of update like 3.3.3. it is always safe to us caret because if insatll major version directly lot of times our app broke.
+
+
+
+
+
+
+
+
+
+
+
+
+Episode 3:
+
+-whenever we want to build any element it is very deficult to make them with the help of react element so to help to write the elements the facbook devlopers comes witha great solution which is jsx.
+-earlier we was building the websites such that there are different html and javascript page and then we used to murge them.But, JSX convection with the help of which we can murge html and js together.
+example:   const heading = <h1>Hello world</h1>; 
+
+note: note it is not HTML it is a HTML like syntax it's just look's like HTML.
+
+here, below both examples are same.
+
+code1: const heading=React.createElement("h1",{id:"heading"},"Hello Omkar!");            ===========  code2:   const heading=<h1>Hello Omkar</h1>;
+
+note: - JSX is a syntax, in above example we are modifying react element with the help of jsx syntax.here, code1 is created using a core react and code to is created with the help of a jsx.
+      - Both the code will genrate the react element which will be an 'object'.
+      - this not a valid js code because the valid js code is the code which js engine understands.because js engine understands the ECMAScript.This is what our broweser undertands. if we run the above jsx syntax it will through an syntax error.
+      - js cannot read the jsx code then how is this code working?:
+          our package maneger do the job behind the scenes.even before the whole code goes to the browser it is transpiled into the code which browser can understands.transpiled means it gets convereted into code which browser and react can understands.
+      - our package manger holds a package which is known as "Bable". bable is a package.bable converts the jsx code quickly into the code that react can undersatands.
+      - Bable is a javascript compiler also known as transpiler.
+      - Bable is not devloped by the facbook.
+      - Bable takes our JSX code and then converts it into "React.createElement" then know react undersatands that code.
+      - some older browsers does not understands the newer react code bable transplies the code which they can understands.
+      - for writing the attributed in jsx we have to write it camle case also we write "className" instead of "class".if we are writing a code in  multiple lines then we have to wrap that in to a paraenthisis like (.......codde....)
+      - inside jsx we can write any piece of javascript inside {} braces.
+
+* JSX => converted to React.createElement =>React Element => js object => htmlElement
+ex:
+ const justAPieceOfJsx = (
+  <h2>
+    here i am JSX Oooo... who's this?
+    {Heading}
+  </h2>
+);
+
+    note: - JSX prevents cross side scripting attack.It sanitze your code and then run.
+          - React code is Readable because we are using JSX other wise the code will be so complecated after using React.createElement.
+          
+
+* React Component:- 
+                  - there are two types of components in a react class base component and functional component.
+
+- functional component = functional component is a normal javascript function which returns some piece of JSX.
+   ex:
+   
+const FunctionComponent = () => {
+  // return <h1>hello</h1>
+  return (
+    <h1>
+      {Hello()}
+      <Hello />
+      {justAPieceOfJsx}
+      hello from React function Component.
+    </h1>
+  );
+};
+   
+    note:   - whenever you create a functional component named it with the capital letter.its a react way to undersatands its a component.
+            - we can use it like 
+                1. {FunctionComponent()}
+                2. <FunctionComponent/>
+                3. <FunctionComponent> </FunctionComponent>
+            - for using functional component we have to use <FunctionComponent/> or we can also write {FunctionComponent()} here we are calling a function it is possible becs func. comp. is a function at the end of the day.
+
+- Component Composition = When a React component is used inside another React component it is known as component composition
+
+
+
+
+
+
+
+
+
+
+-episode 4 :
+
+-steps of building a App:
+  1. Planning : you should exactly know what you are going to build and what is what is the process of building it,how it will look.in the planning UI Design, layout, wireframe,UI mock,etc.
+  2.config-driven UI
+
+-App component structure:
+
+    -Header
+      -logo
+      -Nav Items
+    -Body
+      -Search
+      -ResturantContainer
+        -RestuerantCard
+          -img
+          -name
+          -cuisine
+          -rating
+          -delivery time
+      -Footer
+        -Copyright
+        -Links
+        -Address
+        -Contact
+
+-Config-driven-UI: contoling your UI using data. data is config, data comes from backend. we use this because for every place the data is differtent. After building a reusable components we can pass a dynamic data in that.
+-props(properties): If we have to pass some data dynamically to a component we use a props.props are just a passing argument to a function.function component is at the end of the day just a normal js function. props are just a arrgument to a function. 
+-what react will do is it will take all this props(properties) and it will wrap it inside a object and it will pass it here as a props.
+note: If we console log we can see that props is a object.
+
+ex.
+- we pass props as to components:      
+      <Res_card resName={"Burger King"} resRating={"4.3"}/>
+      <Res_card  resName={"kfc"}  resRating={"5"}/>
+
+- we receive and render props as below in a component
+ex.
+  const Res_card = (props) => {
+  return (
+    <div className="res_card">
+      <div className="res_img_container">
+        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf"  className="res_img" alt="food_villa_logo" />
+      </div>
+      <div className="first-line">
+        <h2 className="res_name">{props.resName}</h2>
+        <h3 className="res_rating">{props.resRating}</h3>
+      </div>
+      <div className="ratingAndDeliveryTime">
+        <span className="res_price">Rs.4000 for two</span>
+        <span className="res_delivery_time">20-30 Min</span>
+      </div>
+      <div className="res_cuisine">
+        Pizzas, Pastas, Italian, Desserts, Beverages
+      </div>
+    </div>
+  );
+};
+
+
+- we use "destructuring of props" on the fly to avoid using "props.__" everytime.
+-Destructuring in JavaScript is a feature that allows you to extract values from objects (and arrays) and assign them to variables in a more concise and readable way.
+ In the context of objects, destructuring enables you to unpack properties from objects into separate variables.
+ex. 
+const Res_card = ({resName,resRating}) => {
+  return (
+    <div className="res_card">
+      <div className="res_img_container">
+        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf"  className="res_img" alt="food_villa_logo" />
+      </div>
+      <div className="first-line">
+        <h2 className="res_name">{resName}</h2>
+        <h3 className="res_rating">{resRating}</h3>
+      </div>
+      <div className="ratingAndDeliveryTime">
+        <span className="res_price">Rs.4000 for two</span>
+        <span className="res_delivery_time">20-30 Min</span>
+      </div>
+      <div className="res_cuisine">
+        Pizzas, Pastas, Italian, Desserts, Beverages
+      </div>
+    </div>
+  );
+};
+
+
+
+/* we can also write this as 
+      const Res_card=(props) => {
+        const {resName,resRating} =props; 
+      }
+*/
+
+ex. 
+-here we are distructuring from a resdata.info object.
+- {  image, name, rating, cft } is the destructuring syntax, where we specify the properties of the resData.info object that we want to extract.
+- image, name, rating and cft  are the variables into which the corresponding values from the resData.info object are assigned.
+
+
+const Res_card = ({ resData }) => {
+  const { image, name, rating, cft } = resData?.info; // using optional chaining here so if there is no "resData" then also the code will not brock.
+
+  return (
+    <div className="res_card">
+      <div className="res_img_container">
+        <img src={image?.url} className="res_img" alt="food_villa_logo" />
+      </div>
+      <div className="first-line">
+        <h2 className="res_name">{name}</h2>
+        <h3 className="res_rating">{rating?.aggregate_rating}</h3>
+      </div>
+      <div className="ratingAndDeliveryTime">
+        <span className="res_price">{cft?.text}</span>
+        <span className="res_delivery_time">
+          {resData?.order?.deliveryTime}
+        </span>
+      </div>
+      <div className="res_cuisine">
+        Indian, Fast food, Waffle, Desserts, Beverages,
+      </div>
+    </div>
+  );
+};
+
+
+- optional chaining: Optional chaining is a feature introduced in JavaScript to simplify accessing properties of nested objects when there's a possibility of encountering null or undefined.
+                     It provides a concise way to handle scenarios where you need to access nested properties without encountering errors due to null or undefined values.
+
+ex.  const { image, name, rating, cft } = resData?.info;
+note: make sure we write allways a reusable component
+
+- why we have to use "key" every time we are looping over a array?
+    - When multiple components are at same level for optimizing react render cycle react uses key if we do not provide key react basicaly rerender whole thing. after giving a key react knows which to render and which not, it basicaly use to uniquely identify the list item.key should be unique.it hits very big performance hit if we do not provude key.becs react itself does not uniquely identify the list item, it will render everything. 
+
+- why not to use a index as a key?
+   read react official documentation
+
+- not using a keys(not acceptable) <<<< index as key(if you don't have a id) <<<<< unique id(best practice)
+
+
+
+
+
+ 
+
+
+
+
+
+---Episode 5---
+
+notes:
+- never keep a hardcoded data in a component file.always make a utils folder where keep all the hard coded code. in industry this foldre also called by name config, utils, common,etc. in utils make a "constant.js" where keep all the hard coeded links and code and also make a "mockdata.js" for keeping a hard coded data which is used for devlopment purpose.
+- when we say react is fast we say this beacause it is faster in a DOM manupulation.it can do iefficient DOM manupulation.
+-Types of import/exports
+    There are two types of import/exports
+    1. Default exports
+        - export default const compoent_name;
+        - import compoent_name from "Path";
+
+        note:use when you want to export a only one function or a component from a file.
+
+    2. Named exports
+        - export const compoent_name;
+        - import {compoent_name} from "Path";
+
+          note: use when you want to export a multiple functions or a components from a file.
+  
+  -Hook:
+      - It is just a normal prebuild utilities js function given by the react,the only difference is that it comes with some super powers that function has written some logic behind it.
+      -hook is notthing but just a normal js function which react gives us it has its own specific use case where we use this function.
+      - there are multiple hooks mostly we use below hooks
+          1. usestate():
+                    - For using this first you have to import this from react as a named export
+                        ex. import {useState} from react;
+                    - useState is use to create local state variable i.e. why the name is useState.
+                    - when we say sate vairable because it mentaines the state of your component.
+                    - if we have a normal variable it after cliking our UI will not be updated directly thats why we use this super powerfull variable "useState" which keeps our UI sync.It just automaticaly render our component.
+                    - "whenever a state vaairable updates react rerenders the component"
+                    - how to use?
+                        1.first import useState hook from react:
+                          import { useState } from "react";
+                        2.create a state variable like:
+                        ex. const [restrauntList,setRestrauntList]=useState(RestrauntList);
+                        here " const[state_variable,setStateVariable]=useState[initial value];
+                        3.use in wherever you want to change a variable after changing a state:
+                        ex: <button
+                               className="search-btn"
+                               onClick={() => {
+                               let value = document.getElementsByClassName("inputbox").value;
+                                      let filterdList = restrauntList.filter((res) =>
+                                          res.info.name.toLowerCase().contains(value.toLowerCase())
+                                                                            );
+                                      setRestrauntList(filterdList);
+                                        }}
+                             >
+
+          
+          *Why React is Fast?:
+              - react is fast beacause react do efficient DOM manipulation.because react has a virtual DOM.
+             - react uses reconsiliation alogorithm also known as react fiber.
+              * virtual DOM: "vertual DOM is a representation of a actual DOM." it is nothing but just a normal JS object.
+              * Diff alogorithm :it basicaly finds out the difference between two virtual DOM's.it finds the difference between the updated virtual DOM and the previous virtual DOM. then it will calculate that difference and then actually update the DOM ON EVERY RENDER cycle. this alogoritham is known as a react fiber.in react 16 this alogoritham was introduced it is the new way to find out the diff and updating the DOM. 
+              -ulitmatly virtual DOM is just an object.so diff alogorithm find out the diff between old object and new object.once it finds out the diff between old and new object then it will update the actual DOM. and that's how react becomes fast.
+              -finding out the diff between two html code is hard. but finding the diff between two objects is fast. because JS is fast.so it finds out the diff between two objects.
+              -whatever we see in the UI react keeps the track of that whole UI, all the DOM nodes all HTML as a virtual DOM it is kind of a object representation of this whole DOM.and suppose user clicks on the filter button then the new object is formed and react find out the difference between this two  objects. it find out earlier there was 15 restranuts now there are 7 restranutsthen it finds out the diff between this objects and then it actually finds the difference update the DOM.it does not touch HTML IT does not find the difference between html. that is why react is fast.
+              -whenever there is a change in a any state variable react will find the diff between virtual DOM and it will rerender our component.it will update the DOM.
+              -IF want to read more on "react fiber" go to Github "acdlite/react-fiber-architecture".
+  
+
+
+
+
+
+
+
+Episode 6:
+
+
+* monolith and microservices architecture:
+          - In monolith architecture there is a single code base is present in which all devlopers has to work.In microservices architecture there are multiple code bases present like backend, UI, Authentication, dataBase, SMS, Gmail,etc and they are redirected to the same domain because of developers can work sepratly. 
+* useEffect:
+         -    useEffect(()=>{},[]);
+                         ^      ^
+                         |      |
+            callback function   dependency array
+
+           useEffect is a function so we call it like a function it takes two arguments,the 1st is a arrow function this arrow function is a callback function and a second argument is a dependencie array. 
+
+        - when then callback function is called?
+            ans: the callback function will be called after your component gets rendered.as soon as render cycle is finished the useEffect get called.if you have to do something after rendering a component you have to write it inside the useEffect.this is the purpose of useEffect.
+        -when there is no dependencie array the useEffectwill get called every render cycle.
+        -when there is empty dependencie array the useEffect will get called only intial render cycle(first time only).
+        -when there is a dependencie array with a variable value inside it the useEffect will get called when ever the variable value get updated.
+
+
+
+
+
+
+Episode 7:
+
+
+  * React router:
+      -for routing we are using react router dom.
+      -first install react router package "npm i react-router-dom".
+      -for creating routing we have to create a routeing configuration in our root level component,in our case it is "main.jsx".
+      -configuration means some information that will define what will happen on a specific route.
+      -for creating routing configuration we have to use... import {createBrowserRouter} from "react-router-dom";
+      -this createBrowserRouter will create a browseing configuration
+      - now , lets create a routing configuration inside of our main.jsx;
+      - now we are creating a routing configuration inside of our appRouter and we are passing our config
+
+        
+        const appRouter=createBrowserRouter(
+        [
+        {
+          path:"/",                             // for / what should happen the path is saying.if path os "/" 
+          element:<App/>,                           // it loads the element in our case it <App/>
+      
+        },
+        {
+        path:"/about",                          //for "/about" whtat weill happem        element:<About/>
+        element:<About/>  
+          }                                      // similarly add other path and elements
+         ]
+        )
+
+
+        - createBrowserRouter takes a list []  of paths , path is nothing but an object and element which has be render.
+        - Now, when I have created this configuration I need to provide this configuration,where we have to provide to render it.
+        - for providing we use one more important component that we import from "react-router-dom" which is "RouterProvider".
+        - This router provider will actually provide this routing configuration to our app.
+        - earlier we were rendering the <App/> directly,Now, insted of this we will provide our routing configuration to this we basicaly do like below.
+                  
+                  ReactDOM.createRoot(document.getElementById('root')).render(
+                  <React.StrictMode>
+                    {/* <App /> */}
+                    <RouterProvider router={appRouter}/>
+                  </React.StrictMode>,
+                  )
+
+          Now,this will work when we type in url: "http://localhost:5173/about" the about page will open.
+        
+        - For handling a error like user type some diff page url which is not present the error msage is given by the react router dom.
+        - for building our own fancy looking error page make a Error.jsx component 
+
+                  const appRouter=createBrowserRouter(
+                  [
+                  {
+                    path:"/",                             
+                    element:<App/>,                        
+                    errorElement:<Error/>                  // add this here the Error component is used. if the path is not / then it will show a error
+                  },
+                  {
+                  path:"/about",                          
+                  element:<About/>  
+                    }                                     
+                  ]
+                  )
+
+          - there is one more cool feature a react dom give to us is it give us a access to important Hook which is "useRouteError".
+          - using "useRouteError" it gives us more information about the Errorso insted o showing a simple message we can tell user in detail a better message on our page it can be route fail error,network error,etc.
+          - use it like below 
+
+                        import { useRouteError } from "react-router-dom";
+
+                        const Error = () => {
+                          const err = useRouteError();
+                          console.log(err);
+                          return (
+                            <>
+                              <h1>Ooops!..</h1>
+                              <h2>Something went wrong!!</h2>
+                              <h4>Error {err.status}:{err.statusText}</h4>
+                            </>
+                          );
+                        };
+
+                        export default Error;
+
+          - Now there is one issue with this the header is also getting replaced with when we change a path that's should not happen.
+          - we want such that the header should be there as it is and only the component below header sholud change with the changed path.
+          - to make this kind of functionality we have to make a childern routes of <App/>.so our app stay as it is and over there we create a childern routes like below.childern is the paths
+                        
+                        const appRouter = createBrowserRouter([
+                          {
+                            path: "/",
+                            element: <App />,
+                            errorElement: <Error />,
+                            children: [
+                              {
+                                path: "/",
+                                element: <Body />,
+                              },
+                              {
+                                path: "/about",
+                                element: <About />,
+                              },
+                              {
+                                path: "/offers",
+                                element: <Offers />,
+                              },
+                              {
+                                path: "/help",
+                                element: <Help />,
+                              },
+                              {
+                                path: "/cart",
+                                element: <Cart />,
+                              },
+                            ],
+                          },
+                        ]);
+          
+          
+          -now here body,about,offers,help and cart are the childern of <App/>
+          -now we are going to render our childern in <App/> with some condition like if the path is "http://localhost:5173/about" it should render about below header.
+          -for doing this react-router-dom give us "outlet" component and we just have to import it and use that <OutLet/> component where we want to change the component according to the path.
+          -if we are on the about page the about component will get filled inside the <Outlet/>it shold be use like below.alsothe <Outlet/> is not visible in HTML.
+                 
+                 
+                  import Header from "./components/Header";
+                  import { Outlet } from "react-router-dom";
+
+                  function App() {
+
+
+                    return (
+                      <div className="app">
+                      <Header/>
+                      {/* <h1>search from app.js</h1> */}
+                      {/* <Body/> */}
+                      <Outlet/>
+                    </div>
+                    )
+                  }
+
+                  export default App
+
+        -

@@ -7,7 +7,7 @@
     height: 4rem;
 }
 
-.appLogo>img{
+.appLogo>a>img{
     height: 4rem;
     width: 6rem;
     margin-left: 20px;
@@ -22,7 +22,8 @@
     margin-right: 20px;
     
 }
-.navItems>li{
+.navItems>li>a{
+    color: black;
     padding: 5px;
     font-size: 18px;
     font-weight: 500;

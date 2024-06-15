@@ -21,35 +21,23 @@ function Shimmer() {
     <div className="shimmer_container">
       <ShimmerBox />
       <ShimmerBox />
-
-      <ShimmerBox />
-
-      <ShimmerBox />
-
       <ShimmerBox />
       <ShimmerBox />
       <ShimmerBox />
-
-      <ShimmerBox />
-
-      <ShimmerBox />
-
       <ShimmerBox />
       <ShimmerBox />
       <ShimmerBox />
-
-      <ShimmerBox />
-
-      <ShimmerBox />
-
       <ShimmerBox />
       <ShimmerBox />
       <ShimmerBox />
-
       <ShimmerBox />
-
       <ShimmerBox />
-
+      <ShimmerBox />
+      <ShimmerBox />
+      <ShimmerBox />
+      <ShimmerBox />
+      <ShimmerBox />
+      <ShimmerBox />
       <ShimmerBox />
     </div>
   );
