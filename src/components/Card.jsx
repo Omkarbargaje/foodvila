@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./card.css";
 //import food_villa_logo from "../../Header/images/food_villa_logo.jpg"; // default export
 
@@ -32,7 +33,8 @@ const res_card_container = ({restrauntList}) => {
   return (
     <div className="res_card_container">
       {restrauntList.map((resturant) => (
-        <Res_card resData={resturant} key={resturant?.info?.id}/>
+        
+       <Link to={`/restaurant/${resturant?.info?.id}`} key={resturant?.info?.id}><Res_card resData={resturant} /></Link> 
       ))}
     </div>
   );

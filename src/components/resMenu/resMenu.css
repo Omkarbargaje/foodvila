@@ -1,0 +1,310 @@
+/* .mainMenuContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.menuContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(96, 96, 133, 0.408);
+    width: 1000px;
+}
+
+.accordionHeading{
+    padding: 10px;
+}
+
+.resName{
+    width: 500px;
+    font-family: Gilroy;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.4px;
+    color: rgba(2, 6, 12, 0.92);
+}
+
+.resDetails{
+    background-color: aqua;
+        width: 500px;
+        font-size: medium;
+        padding: 10px;
+}
+
+
+.resMenu{
+    width: 1000px;
+}
+
+.products{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.productDetail{
+    padding: 10px;
+}
+
+.productName{
+    font-family: Gilroy_Bold;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.75);
+}
+
+.productPrice{
+    margin-top: 5px;
+    font-family: Gilroy;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+}
+
+.productDescription{
+    width: 660px;
+    margin-top: 12px;
+    word-break: break-all;
+    max-height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+img{
+
+    height: 144px;
+    aspect-ratio: auto 156 / 144;
+    width: 156px;
+    border-radius: 12px;
+} */
+
+
+
+
+
+/* General Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Center the menuContainer on the screen */
+  .mainMenuContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Main menu container styling */
+  .menuContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* background-color: rgba(96, 96, 133, 0.408); */
+    width: 100%;
+    max-width: 900px;
+    /* padding: 20px; */
+    border-radius: 8px;
+  }
+  
+  /* Res Detail Container Styling */
+  .resDetailContainer {
+    padding: 25px;
+    width: 75%;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(2, 6, 12, 0.15);
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0px;
+  }
+  
+  .resName {
+    font-family: Gilroy;
+    font-weight: 800;
+    font-size: 28px;
+    letter-spacing: -0.4px;
+    color: rgba(2, 6, 12, 0.92);
+    margin-bottom: 10px;
+
+    
+  }
+  
+  .resDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .ratingAndPrice{
+    font-family: Gilroy_Bold;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+    display: flex;
+    align-items: center;
+  }
+
+  .cuisines{
+    font-family: Gilroy_Bold;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 17px;
+    letter-spacing: -0.1px;
+    color: rgb(241, 87, 0);
+  }
+
+.resLocality{
+    max-width: 70%;
+    text-overflow: ellipsis;
+    font-size: 14px;
+
+}
+.delveryDetail{
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.delveryDetail>img{
+    margin-right: 8px;
+    height: 20px;
+    width: 20px;
+}
+
+  .deliveryTime{
+    font-family: Gilroy_Bold;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+  }
+
+  .deliveryFee {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .accordionHeading {
+    padding: 10px;
+    font-family: Gilroy;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+  }
+  
+  .resMenu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+  }
+
+  .productsContainer{
+    width: 900px;
+  }
+  
+  .products {
+    /* width: 1000px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+    /* background-color: aqua; */
+  }
+  
+  .productDetail {
+    padding: 10px;
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .productName {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: rgba(2, 6, 12, 0.75);
+  }
+  
+  .productPrice {
+    margin-top: 5px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(2, 6, 12, 0.92);
+  }
+  
+  .productDescription {
+    margin-top: 12px;
+    word-break: break-word;
+    max-height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  
+  .imgContainer img {
+    border-radius: 25px;
+    height: 144px;
+    width: 156px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  button{
+    position: relative;
+    bottom: 20px;
+    left:46px;
+    margin-bottom: 10px;
+    #f1f1f1
+  }
+
+  hr{
+    color: #666;
+    margin-top: 2px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .resName,
+    .resDetails,
+    .resMenu,
+    .products,
+    .productDetail,
+    .productDescription {
+      width: 100%;
+    }
+  
+    .menuContainer {
+      padding: 10px;
+    }
+  
+    .productDetail {
+      padding: 5px;
+    }
+  }

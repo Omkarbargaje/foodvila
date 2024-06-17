@@ -34,6 +34,10 @@
   /* box-shadow: 0 0 3px 0 #696969; */
 }
 
+Link{
+  cursor: pointer;
+}
+
 .Shimmer_res_card{
   display: inline-block;
   justify-content: center;

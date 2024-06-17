@@ -1,4 +1,50 @@
+Api using place_id:
+
+https://www.swiggy.com/dapi/misc/address-recommend?place_id=ChIJsxSZsJDS3TsRXCEonV2EB8s
+
+
+
+
+API using input box key search fielld
+
+https://www.swiggy.com/dapi/misc/place-autocomplete?input=nashik&types=
+
+
+
+
+
+API RestrauntList DATA using latitude and longitude
+
+https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.9974533&lng=73.78980229999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
+
+
+
+
+
+swiggy menu api use latitude and longitude and restaurant_id using project api
+
+https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.47520208297237&lng=73.88690855865197&restaurantId=761060
+
+
+swiggy menu api use latitude and longitude and restaurant_id live api from swiggy website
+
+https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5204303&lng=73.8567437&restaurantId=566221&catalog_qa=undefined&submitAction=ENTER
+
+
+
+
+
+
+
+
+
 -made using industry level best practices
+-filtering and search is present.
+-present dynamic page routing
+-reusable components are present
+
+
+
 
 
 Episode 1:
@@ -502,4 +548,24 @@ Episode 7:
 
                   export default App
 
-        -
+        - Now we have to create a functionality which will work like when we click on the about us,cart,etc from header that should get open.
+        - note: never use <a> tag in react for page routing.because when we click on that the whole page refreshed.
+        - For nevegating the page without reloading the page we use <Link> insted of <a> tag. this component is given by a react-router-dom to us. so 1st use "  import { Link } from "react-router-dom";  " 
+        - it works same like <a> the only diff is here is we use "to" instead of "href" see below code. 
+                
+                 <li><Link to="/about">About us </Link></li>  
+
+        - here we can see that after clicking on the links the whole page not get rerendered only that component get rendered.that is why our react application is known as a single page application.
+        
+      Note:
+      -There are two types of routing we can have in our web application.
+        1. Client side routing:
+                - we are using this in react router 
+                - we are not making any network call while moving to the different page.because all the components are allready loaded into our app.when we load our app for the first time it allready has a code for the "about" when we go to "/about" it just loads the component.if we go to diff page it just load that component there it does not make network call.
+                -the only network call is made is when we make network call in the "api".we don't fetch a page.
+                -thats why it's a single page application.
+        2. Server side routing:
+                -It means you have a index.html,about.html,cart.html,etc. if we clicked on a <a href="/about.html"> tag it reloads the whole page it sends the network call to about.html fetches that html and renders that to a webpage that's how our websites use to works.
+                -ir means you make a networks call and page eg.about.html comes from server that is server side routing.
+
+
