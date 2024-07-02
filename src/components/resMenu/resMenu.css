@@ -274,14 +274,14 @@ img{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
+  };
 
-  button{
+.addButton {
     position: relative;
     bottom: 20px;
     left:46px;
     margin-bottom: 10px;
-    #f1f1f1
+    background-color:#22a556;
   }
 
   hr{

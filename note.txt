@@ -38,6 +38,9 @@ https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&la
 
 
 
+
+
+
 -made using industry level best practices
 -filtering and search is present.
 -present dynamic page routing
@@ -71,7 +74,7 @@ note: - React.createElement replaces all the data present in the root while rend
 Episode 2:
 
 notes:
--npm is th package maneger
+-npm is the package maneger
 -package.json is configuration for npm
 -most important package in our project is a bundler here it is parcel.but,there are also many other bundler available in the market like webpack,vite,etc.
 -to install parcel we run "npm install -D parcel". there are two types of dependensies we can install one are the normal dependancises and other are dev-dependencies.we need dev-dependencies to be installed when we are devloping.normal dependencies are used for production code.
@@ -168,10 +171,16 @@ const FunctionComponent = () => {
 
 
 
+
+
+
+
+
+
 -episode 4 :
 
 -steps of building a App:
-  1. Planning : you should exactly know what you are going to build and what is what is the process of building it,how it will look.in the planning UI Design, layout, wireframe,UI mock,etc.
+  1. Planning : you should exactly know what you are going to build and what is the process of building it,how it will look.in the planning UI Design, layout, wireframe,UI mock,etc.
   2.config-driven UI
 
 -App component structure:
@@ -195,6 +204,7 @@ const FunctionComponent = () => {
         -Contact
 
 -Config-driven-UI: contoling your UI using data. data is config, data comes from backend. we use this because for every place the data is differtent. After building a reusable components we can pass a dynamic data in that.
+
 -props(properties): If we have to pass some data dynamically to a component we use a props.props are just a passing argument to a function.function component is at the end of the day just a normal js function. props are just a arrgument to a function. 
 -what react will do is it will take all this props(properties) and it will wrap it inside a object and it will pass it here as a props.
 note: If we console log we can see that props is a object.
@@ -336,17 +346,19 @@ notes:
 
           note: use when you want to export a multiple functions or a components from a file.
   
-  -Hook:
+
+  *Hook:
       - It is just a normal prebuild utilities js function given by the react,the only difference is that it comes with some super powers that function has written some logic behind it.
-      -hook is notthing but just a normal js function which react gives us it has its own specific use case where we use this function.
+      - hook is notthing but just a normal js function which react gives us it has its own specific use case where we use this function.
       - there are multiple hooks mostly we use below hooks
           1. usestate():
                     - For using this first you have to import this from react as a named export
                         ex. import {useState} from react;
                     - useState is use to create local state variable i.e. why the name is useState.
-                    - when we say sate vairable because it mentaines the state of your component.
+                    - when we say state vairable because it mentaines the state of your component.
                     - if we have a normal variable it after cliking our UI will not be updated directly thats why we use this super powerfull variable "useState" which keeps our UI sync.It just automaticaly render our component.
                     - "whenever a state vaairable updates react rerenders the component"
+
                     - how to use?
                         1.first import useState hook from react:
                           import { useState } from "react";
@@ -357,8 +369,8 @@ notes:
                         ex: <button
                                className="search-btn"
                                onClick={() => {
-                               let value = document.getElementsByClassName("inputbox").value;
-                                      let filterdList = restrauntList.filter((res) =>
+                                         let value = document.getElementsByClassName("inputbox").value;
+                                          let filterdList = restrauntList.filter((res) =>
                                           res.info.name.toLowerCase().contains(value.toLowerCase())
                                                                             );
                                       setRestrauntList(filterdList);
@@ -430,7 +442,7 @@ Episode 7:
       
         },
         {
-        path:"/about",                          //for "/about" whtat weill happem        element:<About/>
+        path:"/about",                          //for "/about" what will happen        element:<About/>
         element:<About/>  
           }                                      // similarly add other path and elements
          ]
@@ -490,7 +502,7 @@ Episode 7:
                         export default Error;
 
           - Now there is one issue with this the header is also getting replaced with when we change a path that's should not happen.
-          - we want such that the header should be there as it is and only the component below header sholud change with the changed path.
+          - we want such that the header should be there as it is and only the component below header should change with the changed path.
           - to make this kind of functionality we have to make a childern routes of <App/>.so our app stay as it is and over there we create a childern routes like below.childern is the paths
                         
                         const appRouter = createBrowserRouter([
@@ -527,7 +539,7 @@ Episode 7:
           -now here body,about,offers,help and cart are the childern of <App/>
           -now we are going to render our childern in <App/> with some condition like if the path is "http://localhost:5173/about" it should render about below header.
           -for doing this react-router-dom give us "outlet" component and we just have to import it and use that <OutLet/> component where we want to change the component according to the path.
-          -if we are on the about page the about component will get filled inside the <Outlet/>it shold be use like below.alsothe <Outlet/> is not visible in HTML.
+          -if we are on the about page the about component will get filled inside the <Outlet/>it should be use like below.also the <Outlet/> is not visible in HTML.
                  
                  
                   import Header from "./components/Header";
@@ -562,10 +574,838 @@ Episode 7:
         1. Client side routing:
                 - we are using this in react router 
                 - we are not making any network call while moving to the different page.because all the components are allready loaded into our app.when we load our app for the first time it allready has a code for the "about" when we go to "/about" it just loads the component.if we go to diff page it just load that component there it does not make network call.
-                -the only network call is made is when we make network call in the "api".we don't fetch a page.
-                -thats why it's a single page application.
+                - the only network call is made is when we make network call in the "api".we don't fetch a page.
+                - thats why it's a single page application.
         2. Server side routing:
                 -It means you have a index.html,about.html,cart.html,etc. if we clicked on a <a href="/about.html"> tag it reloads the whole page it sends the network call to about.html fetches that html and renders that to a webpage that's how our websites use to works.
                 -ir means you make a networks call and page eg.about.html comes from server that is server side routing.
 
+
+
+
+
+
+
+
+
+Episode 8:
+
+    * Class base Component:
+        - It is normal JS class.
+        - class base component is a class which extends React.component which has a render method which returns some piece of JSX.
+        - we declare class based component like bellow
+
+
+            import React from 'react';
+
+            class ComponentName extends React.Component {     
+
+              render(){
+                  return(
+                    jsx
+                  )
+              }
+            }
+
+          export default ComponentName;
+
+          - here render method returns some piece of JSX.
+          - React.compoent is a class which is inside of a react package.
+          - just like function component we export it. 
+          
+
+
+      *  How to receive a props in a class based component.
+                - In class we will create a constructor which will receive "props".and we will also write a "super(props)".
+                -and if we do a console.log(props ); we can see our props object.
+
+                code:
+                we use class base component like below:
+                
+                <UserClass name={"omkar bargaje(class)"} location={"pune"}/>        // all props will be combined into an single object and this object will be passed into a constructor
+
+                - so now we can use props name and location inour code
+
+                code:
+
+
+                import React from "react;
+
+                Class UserClass extends React.Component {
+
+                  constructor(props){
+                    super(props);
+
+                    console.log(props);
+                  }
+
+                  render(){
+
+                    const{name,location} = this.props;                  //  destructuring
+
+                    return(
+                            <div className="user-card">
+                              <h2>Name : {name}</h2>
+                              <h2>Location : {location}</h2>
+                            </div>
+                    );
+                  }
+                }
+
+
+                export default UserClass;
+
+
+
+
+
+
+
+
+
+      * how to create a state variable in class base component:
+
+
+            note: 
+            - state is created whenever a class instance is created.
+            - whate is mean by creating a instance of a class: when we say we are rendering a functional component it means on our web page if there is functional component it loads.This means your are mounting this functional component we are kind of invoking that functional component.so whenever we say invoking a functional component that means that means you are loading that function on to the web page.that is known as mounting or invoking a functional Component.
+            - loading a class base component is known as creating instance of a class.
+            - whenver we create instance of a class constructor is called.and this is the best place to receive props.and this is the best place to create a state variable.
+            - we create a state variable using "this.state" and basicaly state is big whole object in which all states are contained.
+            - for changing a state react gives us access to important function konwn as "this.setState()" , and we can use this function anywhere in a class.inside this this.setState we will pass a object which will contain the upadted value of your state variable. refer below code
+            - whenever we pass a value inside a setState variable react will change only that value from this.state()  it will not other values.
+
+
+            code:
+
+            
+                import React from "react;
+
+                Class UserClass extends React.Component {
+
+                  constructor(props){
+                    super(props);
+
+                    this.state={
+                      count:0,                                            // created state
+                      count2,
+                    };
+
+                    console.log(props);
+                  }
+
+                  render(){
+
+                    const{name,location} = this.props;                       //  destructuring
+
+                    const {count,count2} = this.state;                             //  destructuring
+
+                    return(
+                            <div className="user-card">
+
+                            <h1>Count:{count}</h1>
+
+                            <button onClick={()=>{
+                              this.setState({
+                                count:this.state.count + 1,                    // Changed state
+                                count2:this.state.count2 + 1,
+                              })
+                            }}>
+                            increase count
+                            </button>
+
+                              <h1>Count:{count2}</h1>
+                              <h2>Name : {name}</h2>
+                              <h2>Location : {location}</h2>
+                            </div>
+                    );
+                  }
+                }
+
+
+                export default UserClass;
+
+
+
+              - from here you can understands react is changing only the portion of the object from this.state() which is need to be upadte by comparing with the this.setState(). It basically find out the "diff" between the two objects.
+              - whenever this onClick button is clicked react will retregar the reconsiliation cycle and it will find the "diff" between the two objects.it will upadte the state variable it will rerender the component.that's how react works.
+
+
+
+
+
+      * Life cycle of a React class based components:
+
+            - we will see how this react class based components put up on the web page how it is loaded or you can say mounted on the web page.loading and mounting is the same thing.
+            - when we load our code it goes line by line and if we are calling a class base component there it can see ohh there is a class based component there. so it start loading class based component.
+            - It will go to that class base component.
+            -Now, that instance of class is created and what happens when this instance of class is created is "constructor" is called.
+            - "the first thing when the class loads a constructor is called.then render is called"
+            - see below code:
+
+            code:
+
+            
+                import React from "react;
+
+                Class UserClass extends React.Component {
+
+                  constructor(props){
+                    super(props);
+
+                    this.state={
+                      count:0,                                            
+                      count2,
+                    };
+
+                    console.log(props);
+
+                    console.log("constructor is called");                   //  1st constructor is called
+                  }
+
+                  render(){
+
+                    console.log("render is called");                    //  2nd render is called
+
+
+                    const{name,location} = this.props;                       
+
+                    const {count,count2} = this.state;                            
+
+                    return(
+                            <div className="user-card">
+
+                            <h1>Count:{count}</h1>
+
+                            <button onClick={()=>{
+                              this.setState({
+                                count:this.state.count + 1,                    // Changed state
+                                count2:this.state.count2 + 1,
+                              })
+                            }}>
+                            increase count
+                            </button>
+
+                              <h1>Count:{count2}</h1>
+                              <h2>Name : {name}</h2>
+                              <h2>Location : {location}</h2>
+                            </div>
+                    );
+                  }
+                }
+
+
+                export default UserClass;
+
+
+
+
+          
+
+  - Let's see how constructor and render function is called in a parent child relationship:
+
+Parent: 
+              import User from "../class/User";
+              import { Component } from "react";
+
+              class About extends Component {
+
+                    constructor(props){
+                        super(props);
+
+                        this.state={
+                            name:"parent",
+                        }
+
+                        console.log("parent constructor");
+                    }
+
+                        render(){
+                            console.log("Parent render");
+                            return (
+                                <div>
+                                <h1>About {this.state.name}</h1>
+                                <User name={"first"}/>
+
+                                </div>
+                            )
+                        }
+                    }
+
+               export default About;
+
+
+child: 
+
+                      import React from "react";
+
+                      class User extends React.Component {
+                        constructor(props) {  
+                          super(props);
+
+                          this.state = {
+                            age: 25,
+                          };
+
+                          console.log(`${this.props.name} child constructor`);
+                        }
+
+                        render() {
+                          const { name } = this.props;
+                          const { age } = this.state;
+
+                          console.log(`${this.props.name} "child render"`);
+
+                          return (
+                            <>
+                              <div>hello {name}</div>
+                              <div>you are {age}</div>
+                              <button
+                                onClick={() => {
+                                  this.setState({
+                                    age: age + 1,
+                                  });
+                                }}
+                              >
+                                increase age
+                              </button>
+
+                            </>
+                          );
+                        }
+                      }
+
+                      export default User;
+
+
+      - basicaly what happen here is when the about component is loaded , first of all the about component is instialize. basically a new instance of a class is created.so the constructor of a parent is called then the render is called.
+      - then it goes to the childern then constructor of childern is called and the render of children is called.
+      
+      order: 
+
+      parent constructor
+      parent render
+      child constructor
+      child render
+
+        - this is how a lifecycle of a class based component works.
+      
+
+
+      - just like a constructor and render method class based component also have a one more important method known as " componentDidMount "
+      - componentDidMount is the another method which react class based component  gives to us basicaly what happens when this component is loaded first the constructor is called then the render method is called and once this class based component is mounted on to the DOM then this componentDidMount is called.
+      - constructor ----> render  ----> componentDidMount
+      - that is why the name is componentDidMount.
+      - also see how it will work when parent and child both have the componentDidMount methods.
+      - now what will happen first parent constrctor is called, then render will be called and when the component is rendering it will a see a child class based component. 
+
+
+Parent: 
+              import User from "../class/User";
+              import { Component } from "react";
+
+              class About extends Component {
+
+                    constructor(props){
+                        super(props);
+
+                        this.state={
+                            name:"parent",
+                        }
+
+                        console.log("parent constructor");
+                    }
+
+              componentDidMount(){
+                        console.log(" parent componentDidMount")
+                      }
+
+
+                        render(){
+                            console.log("Parent render");
+                            return (
+                                <div>
+                                <h1>About {this.state.name}</h1>
+                                <User name={"first"}/>
+
+                                </div>
+                            )
+                        }
+                    }
+
+               export default About;
+
+
+
+
+child:
+                      import React from "react";
+
+                      class User extends React.Component {
+                        constructor(props) {  
+                          super(props);
+
+                          this.state = {
+                            age: 25,
+                          };
+
+                          console.log(`${this.props.name} child constructor`);
+                        }
+
+                      componentDidMount(){
+                        console.log(" child componentDidMount")}
+                      
+
+                        render() {
+                          const { name } = this.props;
+                          const { age } = this.state;
+
+                          console.log(`${this.props.name} "child render"`);
+
+                          return (
+                            <>
+                              <div>hello {name}</div>
+                              <div>you are {age}</div>
+                              <button
+                                onClick={() => {
+                                  this.setState({
+                                    age: age + 1,
+                                  });
+                                }}
+                              >
+                                increase age
+                              </button>
+
+                            </>
+                          );
+                        }
+                      }
+
+                      export default User;
+
+
+      note: 
+          - in parent child relationship the code is get called in below steps:
+            1. parent "constrctor" is called
+            2. parent "render()" will be called
+            3. And when the component is rendering it will see a child class base component inside it so,it is not yet finished mounting it will go the child class based component and it will triger it's lifecycle methods.now child class based component's "constructor" will be called.
+            4. then the child class "render()" will be called
+            5. then childer "componentDidMount" will be called
+            6. and once all children mounted sucssfully then parent "componentDidMount" will be called.it is called once the component has been completly mounted on the web page.
+
+
+            so the output of above code will be:
+
+                  parent constructor
+                  parent render
+                  child constructor
+                  child render
+                  child componentDidMount
+                  parent componentDidMount
+
+
+            So, this is the lifecycle of the parent child relationship.
+
+
+
+        note:
+          - The use of componentDidMount is to make the API calls.
+          - why we make the API calls in a componentDidMount?:
+              - for better User experience we render our component like below.
+                  Loads code ---> Render ----> API ---> Render
+
+              - first we load our component once the component is loaded, then we make a API call and fill the details.because react component loads very fast.react does not wait for a API call to return the result and then load it.
+              - so,basically what we want to do it we want to render the component once make a API call and then fill the data inside the component.we don't want to wait for the API to return the data to render the component other wise the component will not be render and it will keep on waiting for the data to come from API.that's why we want to qcikly render it then make API call then render the data.this is why we use "useEffect()".
+              - and similarly in class base component I want to quickly render my component then make API call and then fill the data.we want to render our component as fast as possible.then make API call and get the data.and render it.
+              - if we have a two childerns present in a parent class based component the methods will be called like bellow.
+
+                    parent constrctor
+                    parent render
+                    firstchild constrctor
+                    firstchild render
+                    secondchild constructor
+                    secondchild render
+                    firstchild componentDidMount
+                    secondchild componentDidMount
+                    parent componentDidMount
+
+
+              
+          - note: 
+                - refer "react lifecycle diagram" from website "https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/"
+
+                - In react when component is mounted it is mounted in a two phases 
+                    1. Render phase
+                    2. commit phase
+
+                - when the component is mounting first constructor is called then render() is called this constrctor and render() is a "render phase".
+                - then the react's update the DOM and then componentDidMount is called. and that's why it is the best place to make an api.
+                - in case of a multiple childerns 
+
+                    parent constrctor
+                    parent render
+
+                    firstchild constrctor               |---->  it batch the render pahse of a 1st child 
+                    firstchild render                   |
+
+                    secondchild constructor              |---->  it batch the render pahse of a 2nd child 
+                    secondchild render                   |
+
+                    <DOM UPDATED IN A SINGLE BATCH> 
+
+                    firstchild componentDidMount
+                    secondchild componentDidMount
+
+                    parent componentDidMount
+
+
+              - after parent constructor and render methods are called the react batch the render phase of all the childrens present.then the commit phase of each is called.this is why react is fast.
+              - react batch a render phase of multiple childrens. because, once the commit phase is start react tries to update the DOM and DOM manupulation is the most expansive thing when we are updating the component.it takes a lot of time.so that' why react want to batch the render phase.
+              - when react is rendering in the render phase it basicaly trigering the reconsiliation and in this reconsiliation it is finding the diff between this vertual dom objects. everthing inside render phase is happning inside the vertual dom.
+              - and when it tries to update the dom it says let me find out all the childerns batch the render phase because render phase is very fast and commit phase takes time.that is why it just batches the render phase all the child components are rendered then the commit happens.
+              - REACT is optimising performance like this.
+
+
+
+  * How to make an API call in class based component:
+
+        - it i like below:
+
+                      import React from "react";
+
+                  class User extends React.Component {
+                    constructor(props) {  
+                      super(props);
+
+                      this.state = {
+                        userInfo:{
+                          name:"dummy",
+                          location:"dummyLocation",
+                          contact:"Dummy contact",
+                        }
+                      };
+
+                    }
+
+                    async componentDidMount()
+                        {         
+                          const data = await fetch("https://api.github.com/users/Omkarbargaje");
+                          const json =await data.json();
+
+                          console.log(json);
+
+                          this.setState({userInfo:json});
+                        }
+
+
+
+                    componentDidUpdate(){
+                      console.log("componentDidUpdate");
+                    }
+
+
+                    componentWillUnmount(){
+                      console.log("componentWillUnmount");
+                    }
+
+                    render() {
+                      const { name,login ,public_repos,avatar_url} = this.state.userInfo;
+
+                  // debugger;
+                      return (
+                        <div style={{height:"auto",padding:"20px",width:"500px",border:"1px solid black", display:"flex", flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
+                        <img src={avatar_url} alt="" />
+                        <div>Name : {name}</div>
+                        <div> loginId: {login}</div>
+                        <div>public_repos: {public_repos}</div>
+                          {/* <User2/> */}
+                        </ div>
+                      );
+                    }
+                  }
+
+                  export default User;
+
+
+
+
+    - now let's see how exactly it works
+
+      - now as soon as a UserClass is loaded the constructor is called and when the constructor is called the state variable is created with some default value here our case we are using dummy data.
+      - after constructor "render()" happen.now here state variable had some default value here so render happens with a default value.so all the dummy data is is rendered inside a component to the web page.that means react will update the DOM with the Dummy data.if we put a debugger we can see for cople of mili seconds our dummy data is loaded on the screen.
+      - now, our "componentDidMount" is called with an API call made and it called a "setState" when the setState is called th mounting cycle is completed.
+      
+      - now, let's see the updating cycle.
+      - when we call the setState the updating cycle is start.now setState updates the state variable.when the state variable is updated react trigers the render function once again.note constructor is not called here it is allreadyb called only render function is called once again.
+      - now, render happens but this time state variable is changed with the updated new value.so, react will render it.
+      - so, now in the update cycle react will update the DOM by calculating the "diff". and it will update the DOM with the new value now.and all the dummy data will get replace with the original data from the API.
+      - and then the update cycle will call "componentDidUpdate".
+
+      - when react updated our DOM there is somthing none as "componentDidUpdate" also.
+      - and this "componentDidUpdate" will called later on. at the end.we can do a console.log and see.
+
+
+      the whole lifecycle is run like below 
+
+      -----mounting cycle----
+
+          constructor (dummy data)
+          Render (dummy data)
+                  <Html (dummy data get updated) >
+          component Did mount 
+              <API call >
+              this.setState ---> state variable is updated
+
+      
+      ----- update cycle-----
+
+          render(API data)
+          <Html (dummy data get updated with new API data) >
+          componentDidUpdate            --> it is get called after the update phase is completed.
+
+
+      ----- unmounting cycle-----
+
+            componentWillUnmount         --> it is get called just befor the component will unmount, unmount means when the component is disappeared from the web page it happens when user changes page.unmounting means removing from the UI.
+
+      
+
+
+
+
+    - Disclaimer:
+          "never ever compare react lifecycle methods to function component."- while we write modern react code they remove the concept of a the lifecycle methods
+          
+          - never say useEffect is equivalent to "componentDidMount".it is not equivalent because useEffect is not using componentDidmount behind the scences.it is new way all together.
+          - just think, what will happen when we don't put a dependancy array inside a useEffect, then our function inside useEffect will get called after every render cycle.now,the things are different in a class based component .here after first render the componentDidMount get called and after every subsequent render it is updated.
+          - in useEffect we use a empty dependancy array,for calling our function once at initial render.if we write something inside the array then our function get called wherver the value inside the  array get changed how we will do this kind of functionality in a class based component.
+          - we know "componentDidUpdate" is method will get called after every render cycle. so, we will use this to create a functionality which will update our component after a perticular variable get changed inside it. like we pass dependency array inside functional component refer bellow code for class based component
+        
+        code:
+          
+          componentDidUpdate(prevProps,prevState){
+
+                if(this.state.count !== prevState.count){
+
+                  // write your code here which will change after count is changed.
+
+                }
+
+                if(this.state.count2 !== prevState.count2){
+
+                  // write your code here which will change after count2 is changed.
+
+                }
+
+                      console.log("componentDidUpdate");
+            }  
+
+
+          - here if we want to make our funtion changed after mutiple conditions then we have to make a multiple if else conditions. so to avoid this in functional component react developers created an array in which we all our variable on which our function is dependent.
+
+
+      - what's the use of a "componentWillUnmount" method?
+
+          - it is get called when we leave the page.
+          - our react application is a single page application and because of this we only changed component when we are changing the pages but it is a single page itself. so, there are lots of things we have to clear when we are leaving the page.
+          - refer below code:
+
+
+                      import React from "react";
+
+                        class User extends React.Component {
+                          constructor(props) {  
+                            super(props);
+
+
+                          }
+
+                          async componentDidMount()
+                              {
+                                setInterval(()=>{
+                                  console.log("hello omkar")                  // setInterval is called 
+                                },1000);
+                              }
+
+
+                        componentDidUpdate(){
+                          // console.log("componentDidUpdate");
+                        }
+
+
+                          render() {
+                            const { name,login ,public_repos,avatar_url} = this.state.userInfo;
+
+                            return (
+                              <div style={{height:"auto",padding:"20px",width:"500px",border:"1px solid black", display:"flex", flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
+                              <img src={avatar_url} alt="" />
+                              <div>Name : {name}</div>
+                              <div> loginId: {login}</div>
+                              <div>public_repos: {public_repos}</div>
+                                {/* <User2/> */}
+                              </ div>
+                            );
+                          }
+                        }
+
+                        export default User;
+          
+
+          - In above code we are calling a setInterval after each second.now a issue with a single page application is if I move to the new page then our interval is still calling.it should not call after we changed page but here we can see that it is calling multiple intervals simultaniously if we are constantly switching pages.
+          - this is the problem of a single page application because when we are changing the pages it is not reloading our page it is just changing the components. it is just rendering. the react is reaconsiling . it is the power of SPA but it is also a disadvantage of a SPA. this will cause a huge performance issue.
+          - so for clearing the interval or timeout after we leave a page we use "componentWillUnmount". we decalare the intervals and timeout using "this" keyword because this is shared between all the functions of the class. we can reference intervals and timeout in a "componentWillUnmount" by using "this" keyword refer below code:
+          
+          code:
+
+                      import React from "react";
+
+                        class User extends React.Component {
+                          constructor(props) {  
+                            super(props);
+
+
+                          }
+
+                       async componentDidMount()
+                              {
+                                setInterval(()=>{
+                                  console.log("hello omkar")                  // setInterval is called 
+                                },1000);
+                              }
+
+
+                      componentDidUpdate(){
+                          // console.log("componentDidUpdate");
+                        }
+
+
+                       componentWillUnmount(){
+                          if (this.timer) {
+                            clearInterval(this.timer);
+                          }
+
+                          console.log("timer cleared");
+                          // clearInterval(this.timer);
+                        }
+
+
+                          render() {
+                            const { name,login ,public_repos,avatar_url} = this.state.userInfo;
+
+                            return (
+                              <div style={{height:"auto",padding:"20px",width:"500px",border:"1px solid black", display:"flex", flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
+                              <img src={avatar_url} alt="" />
+                              <div>Name : {name}</div>
+                              <div> loginId: {login}</div>
+                              <div>public_repos: {public_repos}</div>
+                                {/* <User2/> */}
+                              </ div>
+                            );
+                          }
+                        }
+
+                        export default User;
+          
+
+
+
+      - now let's see what will happen when we create our useEffect inside our functional compoenent.
+
+          code:
+
+            useEffect(()=>{
+              const timer = setInterval(()=>{
+                console.log("hello omkar");
+              },1000)
+
+              return()=>{
+                clearInterval(timer);
+              }
+            },[]);
+
+
+      - if we not clear the interval in a functional component the interval will not be stoped after we change page it behaves the same like class based component because we are not cleaning up the code.
+      - so for clearing timer in functional component there is something known as return in a functional component from where you can return a function.this function is basicaly get called when we are unmounting it. this is basically unmounting phase.
+      - 
+
+
+
+
+
+
+Episode 9:
+
+
+
+    * Single risponsibility pricipal:
+
+        - It means if you have a class or a function if you have a any single identity of your code that should have a single risponsibility.
+        - means each of the component sholud have a single risponsibility.
+        - Each compoenent that we are creaating that should have a single risponsibility.we should not do lot of things in a single component.just break donwn to a multiple component.this makes our code mudular.
+        - modularity means you break down your component into a small small modules so that your code becomes more maintainable and more testable.because,suppose if you have the single unit of a component we can write a test cases just for this small unit,in case if our big app have a bug if that bug is inside of this small compoenent unit the test case will catch it and we can easily test it and do neccessary changes.
+        - also there is one more advantage of moduler code is wherever in our app we want a same compoenent we can easily reuse it.
+        - so, if we write code in modular fashion if we follow the single risponsibility principle,what happens is we get features of code reusablity ,code becomes maintainable and code becomes more testable. 
+        - there is no hard and fast rule to a single risponsibility pricipal. Just keep your compoenent as light as possible.because others should understand what you are doing in your code and easily solve a bug.
+        - we can make our code modular using a custom hooks.
+
+
+    * Custom Hooks:
+        
+        - it is just a normal function, hook is just a utlity function, we just take out some responsibility from a compoenent and extract it inside a hook so that our hook and our componenet becomes more modular and readable.
+        - we are creating a custom hook inside a resMenu compoenent.
+        - currently the resMenu compoenent has a two major responsibility
+              1. fetching the data.
+              2. displaying the data on to the UI.
+
+        - so , don't you think that resMenu compoenent should worry about only displaying the data.It should not worry where the data is coming from here, How the data is coming, what is the API is being called it should not be worry about all that.
+
+        - so, we just want to have a hook which is like a "useRestaurantMenu()". this will give us this "resInfo and resDetails". and we do not want have to worry about how this hook is fetching the data.
+        - here, we are trying to extract our fetch data logic and put inside this new custom hook.we are creating the "useRestaurantMenu" so ResMenu only worry about displaying the data on to the UI. and the code will also be little claner.
+
+        - create a custom  hook inside a utils folder make sure the hook name start with "use..." so we and react both can understand its a hook.
+        - so the "useRestaurantMenu" is created like below. which take resId and return resDetails and resMenu.
+
+
+        code: 
+                import { resMenuAPI } from "../utils/constants";
+                import { useState, useEffect } from "react";
+
+                const useRestaurantMenu = (resId) => {
+                  const [resMenu, setResMenu] = useState(null);
+                  const [resDetails, setResDetails] = useState(null);
+
+                  useEffect(() => {
+                    fetchData();
+                  }, []);
+
+                  const fetchData = async () => {
+                    const data = await fetch(
+                      `${resMenuAPI}lat=18.5204303&lng=73.8567437&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`
+                    );
+
+                    const resMenuData = await data.json();
+
+                    setResMenu(
+                      //   resMenuData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
+                      resMenuData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR
+                    );
+                    setResDetails(resMenuData?.data?.cards[2]?.card?.card);
+                  };
+
+                  return { resMenu, resDetails };
+                };
+
+                export default useRestaurantMenu;
+
+
+
+        - and we can easily import it in a resMenu compoenent like below
+
+           code:
+           
+              const { resDetails, resMenu } = useRestaurantMenu(resId);
+
+
+
+        
 

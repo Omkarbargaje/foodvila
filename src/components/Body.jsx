@@ -50,14 +50,14 @@ const Body = () => {
 
     // console.log(swiggyData);
     console.log(
-      swiggyData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+      swiggyData.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
     setRestrauntList(
-      swiggyData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+      swiggyData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setAllRestrauntList(
-      swiggyData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+      swiggyData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
